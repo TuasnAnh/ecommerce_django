@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      {% load static %}
+      <link rel="stylesheet" type="text/css" href="{% static 'ecommerce/customer/register.css' %}" />
+      <title>Register</title>
+   </head>
+   <body>
+      <form action="register" method="post">
+         {% csrf_token %}
+         <div class="wrapper">
+            <div class="container">
+               <label for="name">Username</label>
+               <input class="input" type="text" name="username" />
+            </div>
+
+            <div class="container">
+               <label for="password">Password</label>
+               <input class="input" type="password" name="password" />
+            </div>
+
+            <div class="container">
+               <label for="repassword">Re-Password</label>
+               <input class="input" type="password" name="repassword" />
+            </div>
+
+            <div class="container">
+               <label for="name">Name</label>
+               <input class="input" type="text" name="name" />
+            </div>
+
+            <div class="container">
+               <label for="gender">Gender</label>
+               <div class="row">
+                  <input class="margin" type="radio" name="gender" value="1" /> Male<br />
+                  <input class="margin" type="radio" name="gender" value="2" /> Female<br />
+                  <input class="margin" type="radio" name="gender" value="3" /> Other
+               </div>
+            </div>
+
+            <div class="container">
+               <label for="Phone">Phone</label>
+               <input class="input" type="text" name="Phone" />
+            </div>
+
+            <div class="container">
+               <label for="Email">Email</label>
+               <input class="input" type="text" name="Email" />
+            </div>
+
+            <div class="container">
+               <label for="birth">Date of birth</label>
+               <input class="input" type="date" name="birth" />
+            </div>
+
+            <div class="container">
+               <label for="address">Address</label>
+               <input class="input" type="text" name="address" />
+            </div>
+            <input type="submit" />
+         </div>
+      </form>
+
+      {% for item in messages%}
+      <h1>Error {{item}}</h1>
+      {% endfor %}
+   </body>
+</html>

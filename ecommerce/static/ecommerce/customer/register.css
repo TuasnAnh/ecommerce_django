@@ -1,0 +1,35 @@
+.body {
+   width: 100vw;
+   height: 100vh;
+}
+
+.wrapper {
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: center;
+}
+
+.container {
+   width: 350px;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+   margin-top: 10px;
+}
+
+.row {
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-start;
+   align-items: center;
+}
+
+.margin {
+   margin-left: 15px;
+}
+
+.input {
+   width: 200px;
+}

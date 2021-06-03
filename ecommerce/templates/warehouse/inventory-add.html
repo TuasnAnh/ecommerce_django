@@ -1,0 +1,18 @@
+{% extends 'warehouse/warehouse-navbar.html' %} {% block content %}
+
+<div class="inventory_add_wrapper">
+   <p class="inventory_add_title">Chọn loại hàng cần thêm</p>
+   <div class="inventory_add_row">
+      <a href="/inventory/book" class="invetory_add_item">
+         <p class="invetory_add_text">Sách</p>
+      </a>
+      <a href="/inventory/electro" class="invetory_add_item">
+         <p class="invetory_add_text">Đồ điện tử</p>
+      </a>
+      <a href="/inventory/clothes" class="invetory_add_item">
+         <p class="invetory_add_text">Quần áo</p>
+      </a>
+   </div>
+</div>
+
+{% endblock content %}

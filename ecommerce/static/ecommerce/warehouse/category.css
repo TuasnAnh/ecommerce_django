@@ -1,0 +1,60 @@
+.category_wrapper {
+   width: 100vw;
+}
+.category_content {
+   display: flex;
+   width: 60%;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+   margin: auto;
+   margin-top: 100px;
+}
+
+.category_title {
+   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+   font-size: 25px;
+   font-weight: 600;
+}
+.category_add {
+   padding: 7px 10px 7px 10px;
+   background-color: #0066ff;
+   font-size: 15px;
+   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+   border: none;
+   border-radius: 5px;
+   color: white;
+   cursor: pointer;
+}
+.category_clothes_add_wrapper {
+   width: 60%;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   margin: auto;
+   margin-top: 30px;
+}
+
+.category_add_input {
+   height: 30px;
+   padding-left: 10px;
+   margin-right: 30px;
+   width: 400px;
+}
+
+.category_book_add_wrapper {
+   width: 60%;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   margin: auto;
+   margin-top: 30px;
+}
+
+.category_table {
+   width: 50%;
+   margin: auto;
+   margin-top: 30px;
+}

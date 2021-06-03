@@ -1,0 +1,41 @@
+{% extends 'warehouse/warehouse-navbar.html' %} {% block content %}
+
+<div class="supplier_wrapper">
+   <div class="supplier_container">
+      <div class="supplier_left">
+         <p class="suppler_header_text">Danh sách nhà cung cấp</p>
+         <table class="supplier_table">
+            <tr>
+               <th>ID</th>
+               <th>Tên</th>
+               <th>Địa chỉ</th>
+            </tr>
+            {% for item in supplier %}
+            <tr>
+               <td style="text-align: center">{{item.id}}</td>
+               <td>{{item.name}}</td>
+               <td>{{item.address}}</td>
+            </tr>
+            {% endfor %}
+         </table>
+      </div>
+
+      <div class="supplier_right">
+         <p class="suppler_header_text">Thêm nhà cung cấp</p>
+         <form style="width: 100%" action="supplier/add" method="post">
+            <div class="supplier_add_wrapper">
+               {% csrf_token %}
+               <div class="supplier_row_1">
+                  <input placeholder="Nhà cung cấp" class="supplier_add_input" type="text" name="supplierName" />
+                  <input placeholder="Địa chỉ" class="supplier_add_input" type="text" name="supplierAddress" />
+               </div>
+               <div class="supplier_row_2">
+                  <button type="submit" class="supplier_add">Thêm</button>
+               </div>
+            </div>
+         </form>
+      </div>
+   </div>
+</div>
+
+{% endblock content %}

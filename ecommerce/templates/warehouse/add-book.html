@@ -1,0 +1,60 @@
+{% extends 'warehouse/warehouse-navbar.html' %} {% block content %}
+
+<div class="book_add_wrapper">
+   <div class="book_add_container">
+      <p class="book_add_title">Thêm sách</p>
+
+      <form style="width: 100%" method="post" action="/inventory/book/add">
+         {% csrf_token %}
+
+         <div class="book_add_item_wrapper">
+            <div class="book_add_item">
+               <label class="book_add_item_text" for="name">Tên</label>
+               <input class="book_add_item_text_input" type="text" name="name" />
+            </div>
+            <div class="book_add_item">
+               <label class="book_add_item_text" for="quantity">Số lượng</label>
+               <input class="book_add_item_text_input" type="number" name="quantity" />
+            </div>
+            <div class="book_add_item">
+               <label class="book_add_item_text" for="price">Giá cả</label>
+               <input class="book_add_item_text_input" type="number" name="price" />
+            </div>
+            <div class="book_add_item">
+               <label class="book_add_item_text" for="author">Tác giả</label>
+               <input class="book_add_item_text_input" type="text" name="author" />
+            </div>
+            <div class="book_add_item">
+               <label class="book_add_item_text" for="publisher">Nhà xuất bản</label>
+               <input class="book_add_item_text_input" type="text" name="publisher" />
+            </div>
+            <div class="book_add_item">
+               <label class="book_add_item_text" for="category">Thể loại</label>
+               <select class="book_add_item_text_input" name="category">
+                  {% for item in category %}
+
+                  <option value="{{item.id}}">{{item.name}}</option>
+
+                  {% endfor %}
+               </select>
+            </div>
+            <div class="book_add_item">
+               <label class="book_add_item_text" for="supplier">Nhà cung cấp</label>
+               <select class="book_add_item_text_input" name="supplier">
+                  {% for item in supplier %}
+
+                  <option value="{{item.id}}">{{item.name}}</option>
+
+                  {% endfor %}
+               </select>
+            </div>
+         </div>
+
+         <div class="book_add_button_row">
+            <button type="submit" class="book_add_button">Thêm mới</button>
+         </div>
+      </form>
+   </div>
+</div>
+
+{% endblock content %}

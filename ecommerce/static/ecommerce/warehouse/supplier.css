@@ -1,0 +1,100 @@
+.supplier_wrapper {
+   width: 100vw;
+}
+.supplier_content {
+   display: flex;
+   width: 60%;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   margin: auto;
+   margin-top: 100px;
+   text-align: center;
+}
+
+.supplier_title {
+   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+   font-size: 25px;
+   font-weight: 600;
+}
+
+.supplier_add {
+   padding: 7px 13px 7px 13px;
+   background-color: #0066ff;
+   font-size: 15px;
+   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+   border: none;
+   border-radius: 5px;
+   color: white;
+   cursor: pointer;
+}
+
+.supplier_add_input {
+   width: 400px;
+   height: 30px;
+   padding: 8px;
+   margin-top: 20px;
+}
+
+.supplier_add_wrapper {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: flex-start;
+}
+
+.supplier_table {
+   width: 100%;
+}
+
+.supplier_row_1 {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: flex-start;
+}
+
+.supplier_row_2 {
+   width: 400px;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: flex-end;
+   margin: auto;
+   margin-top: 20px;
+}
+
+.supplier_container {
+   margin-top: 70px;
+   width: 100%;
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-start;
+}
+
+.supplier_left {
+   width: 50%;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: center;
+   padding: 0px 20px;
+}
+
+.supplier_right {
+   width: 50%;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: center;
+   padding: 0px 20px;
+}
+
+.suppler_header_text {
+   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+   font-size: 20px;
+   font-weight: 600;
+   margin-bottom: 30px;
+}

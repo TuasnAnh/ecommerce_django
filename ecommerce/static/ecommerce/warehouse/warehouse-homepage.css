@@ -1,0 +1,111 @@
+.contentWrapper {
+   width: 100vw;
+   margin-top: 30px;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: center;
+   padding-bottom: 20px;
+}
+
+.inventorySearchWrapper {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.input {
+   width: 500px;
+   height: 40px;
+   padding-left: 10px;
+   margin-right: 30px;
+}
+
+.submitButton {
+   padding: 7px 10px 7px 10px;
+   background-color: #0066ff;
+   font-size: 15px;
+   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+   border: none;
+   border-radius: 5px;
+   color: white;
+   cursor: pointer;
+}
+
+.headerWrapper {
+   width: 80%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-top: 70px;
+}
+.headerText {
+   font-size: 25px;
+   font-weight: bold;
+   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.addButton {
+   padding: 7px 10px 7px 10px;
+   background-color: #00cc00;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+}
+.addText {
+   text-decoration: none;
+   color: white;
+   font-size: 15px;
+   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.titleText {
+   margin-top: 50px;
+   text-decoration: none;
+   font-size: 20px;
+   font-weight: bold;
+   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.table {
+   margin-top: 20px;
+   width: 80%;
+}
+
+table {
+   border-collapse: collapse;
+}
+
+th {
+   background-color: #0066ff;
+   color: white;
+   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+   font-size: 15px;
+   font-weight: 500;
+   padding-top: 10px;
+   padding-bottom: 10px;
+}
+
+table,
+th,
+td {
+   border: 1px solid black;
+}
+
+td {
+   padding: 10px;
+   font-size: 15px;
+   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+   text-align: center;
+}
+
+.editButton {
+   display: inline-block;
+   padding: 5px 15px;
+   background-color: #ecbf0a;
+   border-radius: 5px;
+   cursor: pointer;
+   text-decoration: none;
+}
+.editText {
+   color: white;
+   font-size: 15px;
+   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}

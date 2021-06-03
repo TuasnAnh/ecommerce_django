@@ -1,0 +1,55 @@
+{% extends 'warehouse/warehouse-navbar.html' %} {% block content %}
+
+<div class="category_wrapper">
+   <div class="category_content">
+      <p class="category_title">Các loại quần áo</p>
+   </div>
+
+   <form action="fashionCategory/add" method="post">
+      <div class="category_clothes_add_wrapper">
+         {% csrf_token %}
+         <input placeholder="Tên loại quần áo" class="category_add_input" type="text" name="newFashionCategory" />
+         <button type="submit" class="category_add">Thêm</button>
+      </div>
+   </form>
+
+   <table class="category_table">
+      <tr>
+         <th>ID</th>
+         <th>Tên</th>
+      </tr>
+      {% for item in fashionCategory %}
+      <tr>
+         <td style="text-align: center">{{item.id}}</td>
+         <td>{{item.name}}</td>
+      </tr>
+      {% endfor %}
+   </table>
+
+   <div class="category_content">
+      <p class="category_title">Các loại sách</p>
+   </div>
+
+   <form action="category/add" method="post">
+      <div class="category_book_add_wrapper">
+         {% csrf_token %}
+         <input placeholder="Tên thể loại" class="category_add_input" type="text" name="newBookCategory" />
+         <button type="submit" class="category_add">Thêm</button>
+      </div>
+   </form>
+
+   <table class="category_table">
+      <tr>
+         <th>ID</th>
+         <th>Tên</th>
+      </tr>
+      {% for item in bookCategory %}
+      <tr>
+         <td style="text-align: center">{{item.id}}</td>
+         <td>{{item.name}}</td>
+      </tr>
+      {% endfor %}
+   </table>
+</div>
+
+{% endblock content %}

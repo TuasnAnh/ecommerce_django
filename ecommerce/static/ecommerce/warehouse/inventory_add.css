@@ -1,0 +1,41 @@
+.inventory_add_wrapper {
+   width: 100vw;
+   margin-top: 50px;
+}
+.inventory_add_title {
+   font-size: 30px;
+   font-weight: bold;
+   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+   text-align: center;
+}
+.inventory_add_row {
+   width: 100%;
+   margin-top: 70px;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+   align-items: center;
+}
+
+.invetory_add_item {
+   width: 300px;
+   height: 300px;
+   border-radius: 30px;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   box-shadow: 1px 1px 4px #888888;
+   cursor: pointer;
+   text-decoration: none;
+   color: black;
+}
+.invetory_add_text {
+   font-size: 20px;
+   font-weight: 500;
+   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.invetory_add_item:hover {
+   box-shadow: 1px 1px 20px #888888;
+}

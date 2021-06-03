@@ -1,0 +1,84 @@
+{% extends 'warehouse/warehouse-navbar.html' %} {% block content %}
+
+<div class="book_add_wrapper">
+   <div class="book_add_container">
+      <p class="book_add_title">Sửa thông tin</p>
+
+      <form style="width: 100%" method="post" action="/inventory/clothes/edit/{{inventory.id}}">
+         {% csrf_token %}
+
+         <div class="book_add_item_wrapper">
+            <div class="book_add_item">
+               <label class="book_add_item_text" for="name">Tên</label>
+               <input class="book_add_item_text_input" type="text" name="name" value="{{inventory.clothes_id.name}}" />
+            </div>
+            <div class="book_add_item">
+               <label class="book_add_item_text" for="quantity">Số lượng</label>
+               <input class="book_add_item_text_input" type="number" name="quantity" value="{{inventory.quantity}}" />
+            </div>
+            <div class="book_add_item">
+               <label class="book_add_item_text" for="price">Giá cả</label>
+               <input
+                  placeholder="VND"
+                  class="book_add_item_text_input"
+                  type="number"
+                  name="price"
+                  value="{{inventory.price}}"
+               />
+            </div>
+            <div class="book_add_item">
+               <label class="book_add_item_text" for="size">Kích thước</label>
+               <input class="book_add_item_text_input" type="text" name="size" value="{{inventory.clothes_id.size}}" />
+            </div>
+            <div class="book_add_item">
+               <label class="book_add_item_text" for="branch">Nhãn hiệu</label>
+               <input
+                  class="book_add_item_text_input"
+                  type="text"
+                  name="branch"
+                  value="{{inventory.clothes_id.branch}}"
+               />
+            </div>
+            <div class="book_add_item">
+               <label class="book_add_item_text" for="color">Màu sắc</label>
+               <input
+                  class="book_add_item_text_input"
+                  type="text"
+                  name="color"
+                  value="{{inventory.clothes_id.color}}"
+               />
+            </div>
+            <div class="book_add_item">
+               <label class="book_add_item_text" for="fashionCategory">Loại</label>
+               <select
+                  class="book_add_item_text_input"
+                  name="fashionCategory"
+                  selected="{{inventory.clothes_id.fashioncategory_id.id}}"
+               >
+                  {% for item in fashionCategory %}
+
+                  <option value="{{item.id}}" {% if inventory.clothes_id.fashioncategory_id.id == item.id %}selected{% endif %}>{{item.name}}</option>
+
+                  {% endfor %}
+               </select>
+            </div>
+            <div class="book_add_item">
+               <label class="book_add_item_text" for="supplier">Nhà cung cấp</label>
+               <select class="book_add_item_text_input" name="supplier" selected="{{inventory.clothes_id.supplier_id.id}}">
+                  {% for item in supplier %}
+
+                  <option value="{{item.id}}" {% if inventory.clothes_id.supplier_id.id == item.id %}selected{% endif %}>{{item.name}}</option>
+
+                  {% endfor %}
+               </select>
+            </div>
+         </div>
+
+         <div class="book_add_button_row">
+            <button type="submit" class="book_add_button">Xác nhận</button>
+         </div>
+      </form>
+   </div>
+</div>
+
+{% endblock content %}
