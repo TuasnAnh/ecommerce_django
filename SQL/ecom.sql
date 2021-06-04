@@ -38,28 +38,45 @@ ALTER TABLE Electro ADD CONSTRAINT FKElectro708033 FOREIGN KEY (Supplier_id) REF
 ALTER TABLE Clothes ADD CONSTRAINT FKClothes984155 FOREIGN KEY (Supplier_id) REFERENCES Supplier (Id);
 ALTER TABLE Clothes ADD CONSTRAINT FKClothes638580 FOREIGN KEY (FashionCategory_id) REFERENCES FashionCategory (Id);
 ALTER TABLE Book ADD CONSTRAINT FKBook729070 FOREIGN KEY (Category_id) REFERENCES category (Id);
+ALTER TABLE supplier MODIFY name varchar(255);  
+ALTER TABLE supplier MODIFY address varchar(255);  
+ALTER TABLE inventory MODIFY Book_id int(10);  
+ALTER TABLE inventory MODIFY Elector_id int(10);  
+ALTER TABLE inventory MODIFY Clothes_id int(10);  
+ALTER TABLE `Order` MODIFY payment_id int(10);  
+ALTER TABLE `Order` MODIFY shipment_id int(10);  
+ALTER TABLE `Order` MODIFY bank_id int(10); 
+ALTER TABLE `Order` add total int(10); 
 
+ALTER TABLE cart add is_used varchar(255);
 
 select * from user;
 insert into User (Username, Pass, Role) values ("warehouse", "123", "warehouse_staff");
 insert into User (Username, Pass, Role) values ("sale", "123", "sale_staff");
 insert into User (Username, Pass, Role) values ("business", "123", "business_staff");
+insert into Bank (name, account, number) values ("Asia Commercial Bank (ACB)", "2131231231", "123123123123");
+
 
 select * from person;
-
 select * from category;
 select * from FashionCategory;
 select * from supplier;
 select * from book;
 select * from electro;
 select * from inventory;
+select * from product;
+select * from cart;
+select * from cartitem;
+select * from `order`;
 
 SET SQL_SAFE_UPDATES = 0;
 delete from book;
+delete from person;
+delete from User where Role = 'Customer';
+delete from product;
+delete from product where id = 5;
+delete from cartitem;
+delete from `order`;
 
-ALTER TABLE supplier MODIFY name varchar(255);  
-ALTER TABLE supplier MODIFY address varchar(255);  
 
-ALTER TABLE inventory MODIFY Book_id int(10);  
-ALTER TABLE inventory MODIFY Elector_id int(10);  
-ALTER TABLE inventory MODIFY Clothes_id int(10);  
+-- alter table
