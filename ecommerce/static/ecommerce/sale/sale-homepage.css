@@ -23,7 +23,7 @@
 
 .submitButton {
    padding: 7px 10px 7px 10px;
-   background-color: #0066ff;
+   background-color: #d65359;
    font-size: 15px;
    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
    border: none;
@@ -35,7 +35,7 @@
 .headerWrapper {
    width: 80%;
    display: flex;
-   justify-content: space-between;
+   justify-content: center;
    align-items: center;
    margin-top: 30px;
 }
@@ -46,7 +46,7 @@
 }
 .addButton {
    padding: 7px 10px 7px 10px;
-   background-color: #00cc00;
+   background-color: #0066ff;
    border: none;
    border-radius: 5px;
    cursor: pointer;
@@ -74,7 +74,7 @@ table {
 }
 
 th {
-   background-color: #0066ff;
+   background-color: #d65359;
    color: white;
    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
    font-size: 15px;
@@ -108,4 +108,56 @@ td {
    color: white;
    font-size: 15px;
    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.order_wrapper {
+   width: 50%;
+   padding: 20px 20px;
+   border: 1px solid #d65359;
+   border-radius: 20px;
+   margin-top: 30px;
+}
+.order_cre_row {
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   padding: 7px 0px;
+   border-bottom: 1px solid #d65359;
+}
+.order_cre_left {
+   font-size: 20px;
+   font-weight: 500;
+   color: #d65359;
+}
+.order_cre_right {
+   font-size: 20px;
+}
+
+.bottomRow {
+   margin-top: 20px;
+   width: 100%;
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+}
+.confirm_order_wrapper {
+   padding: 7px 10px 7px 10px;
+   background-color: #0066ff;
+   font-size: 15px;
+   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+   border: none;
+   border-radius: 5px;
+   color: white;
+   cursor: pointer;
+}
+
+.reject_order_wrapper {
+   padding: 7px 10px 7px 10px;
+   border: 1px solid #0066ff;
+   font-size: 15px;
+   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+   border-radius: 5px;
+   color: #0066ff;
+   cursor: pointer;
+   margin-right: 20px;
 }

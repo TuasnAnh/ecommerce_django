@@ -6,15 +6,15 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       {% load static %}
       <link rel="stylesheet" type="text/css" href="{% static 'ecommerce/login.css' %}" />
-      <title>Login</title>
+      <title>Staff Login</title>
    </head>
    <body>
       {% block content %}
       <div class="body_wrapper">
          <div class="login_wrapper">
-            <p class="headerText1">BOEC</p>
+            <p class="headerText1">BOEC STAFF</p>
 
-            <form style="width: 100%" action="login" method="post">
+            <form style="width: 100%" action="/staff/login" method="post">
                <div class="formWrapper">
                   {% csrf_token %}
                   <label class="login_label" for="username">Tài khoản</label>
@@ -26,11 +26,6 @@
                </div>
             </form>
 
-            <div class="bottomRow">
-               <p class="ask">Bạn chưa có tài khoản?</p>
-               <a class="register_text" href="register">Đăng ký ngay</a>
-            </div>
-
             <div class="bottomText">
                {% for mes in messages %}
                <p class="errorText">{{mes}}!!</p>
@@ -38,7 +33,6 @@
             </div>
          </div>
       </div>
-
-      {% comment %} {% endcomment %} {% endblock %}
+      {% endblock %}
    </body>
 </html>

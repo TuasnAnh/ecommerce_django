@@ -1,0 +1,47 @@
+.created_order_congratuation {
+   width: 100vw;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   margin-top: 100px;
+}
+.congrad {
+   font-size: 30px;
+   font-weight: 700;
+   color: #d65359;
+}
+.congrad_2 {
+   font-size: 25px;
+   font-weight: 500;
+   margin-top: 20px;
+}
+.continues_shoping {
+   margin-top: 20px;
+   padding: 7px 12px;
+   background: #f7941e;
+   border-radius: 5px;
+}
+.continues_text {
+   font-size: 20px;
+   font-weight: 500;
+   color: white;
+}
+.transaction_warning {
+   font-size: 30px;
+   font-weight: 400;
+   color: #d65359;
+   margin-top: 100px;
+}
+.trans_text {
+   font-size: 30px;
+   font-weight: 700;
+}
+.bank_infor_wrapper {
+   width: 30%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   margin-top: 30px;
+}

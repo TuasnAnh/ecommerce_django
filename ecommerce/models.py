@@ -33,6 +33,7 @@ class Book(models.Model):
 class Cart(models.Model):
     id = models.AutoField(db_column="Id", primary_key=True)
     person_id = models.ForeignKey("Person", models.DO_NOTHING, db_column="Person_id")
+    is_used = models.CharField(db_column="is_used", max_length=255, blank=True, null=True)
 
     class Meta:
         db_table = "cart"
@@ -127,6 +128,7 @@ class Order(models.Model):
     created_time = models.CharField(db_column="Created_time", max_length=255, blank=True, null=True)
     status = models.IntegerField(db_column="Status")
     method = models.IntegerField(db_column="Method")
+    total = models.IntegerField(db_column="total")
 
     class Meta:
         db_table = "order"

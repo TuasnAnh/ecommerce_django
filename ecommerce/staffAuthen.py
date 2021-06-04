@@ -1,23 +1,17 @@
-class Authenticate:
+class StaffAuthenticate:
     def __init__(self):
         self.username = ""
-        self.userId = ""
-        self.personId = ""
         self.role = ""
 
-    def login(self, username, role, userId, personId):
+    def login(self, username, role):
         print("login")
         self.username = username
         self.role = role
-        self.userId = userId
-        self.personId = personId
 
     def logout(self):
         print("logout")
         self.username = ""
         self.role = ""
-        self.userId = ""
-        # self.personId = ""
 
     def checkAuthen(self):
         if len(self.username) > 0:
@@ -26,4 +20,4 @@ class Authenticate:
             return False
 
 
-authen = Authenticate()
+staffAuthen = StaffAuthenticate()

@@ -6,10 +6,34 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       {% load static %}
       <link rel="stylesheet" type="text/css" href="{% static 'ecommerce/sale/sale-navbar.css' %}" />
+      <link rel="stylesheet" type="text/css" href="{% static 'ecommerce/sale/sale-homepage.css' %}" />
       <title>Sale</title>
    </head>
    <body>
-      <h1>This is sale nav bar</h1>
+      <div class="wrapper">
+         <div class="flex">
+            <h1 class="title">Nhân viên bán hàng</h1>
+         </div>
+
+         <div class="container">
+            <a href="/order/waiting" class="item_wrapper">
+               <p class="text">Đơn hàng đang chờ</p>
+            </a>
+            <a href="/order/delivering" class="item_wrapper">
+               <p class="text">Đơn hàng đang vận chuyển</p>
+            </a>
+            <a href="/order/success" class="item_wrapper">
+               <p class="text">Đơn hàng đã giao</p>
+            </a>
+         </div>
+
+         <div class="flex">
+            <a href="/staff/logout" class="item_wrapper_2">
+               <p class="text">Đăng xuất</p>
+            </a>
+         </div>
+      </div>
+
       {% block content %} {% comment %} Child in here {% endcomment %} {% endblock %}
    </body>
 </html>

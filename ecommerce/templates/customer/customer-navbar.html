@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      {% load static %}
+      <link rel="stylesheet" type="text/css" href="{% static 'ecommerce/customer/customer-homepage.css' %}" />
+      <link rel="stylesheet" type="text/css" href="{% static 'ecommerce/customer/customer-navbar.css' %}" />
+      <link rel="stylesheet" type="text/css" href="{% static 'ecommerce/customer/cart.css' %}" />
+      <link rel="stylesheet" type="text/css" href="{% static 'ecommerce/customer/created-order.css' %}" />
+
+      <title>Boec</title>
+   </head>
+   <body>
+      <div class="navbar_wrapper">
+         <div class="navbar_conatainer">
+            <a href="/homepage" class="navbar_title">BOEC</a>
+
+            <form action="/customer/search" method="post">
+               <div class="navbar_input_wrapper">
+                  <input
+                     onkeypress="onKeyPress()"
+                     class="navbar_searchinput"
+                     type="text"
+                     placeholder="Nhập tên hàng cần tìm"
+                     name="search"
+                  />
+                  <img class="search_icon" src="{% static 'ecommerce/image/search.png' %}" alt="" />
+               </div>
+            </form>
+
+            {% comment %}
+            <a href="/order" class="text_wrapper">
+               <p class="navbar_text">Đơn hàng</p>
+            </a>
+            {% endcomment %}
+
+            <a href="/cart" class="navbar_cart_wrapper">
+               <img class="cart_icon" src="{% static 'ecommerce/image/cart.png'%}" alt="" />
+               <p class="navbar_text">Giỏ hàng</p>
+            </a>
+
+            <a href="/logout" class="navbar_logout_wrapper">
+               <img class="logout_icon" src="{% static 'ecommerce/image/logout.png'%}" alt="" />
+               <p class="navbar_text">Đăng xuất</p>
+            </a>
+         </div>
+      </div>
+
+      {% block content %} {% comment %} Child in here {% endcomment %} {% endblock %}
+   </body>
+   <script type="text/javascript">
+      function onKeyPress(e) {
+         if (e && e.keyCode == 13) {
+            document.forms[0].submit();
+         }
+      }
+   </script>
+</html>

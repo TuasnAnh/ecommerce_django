@@ -1,0 +1,30 @@
+{% extends 'customer/customer-navbar.html' %} {% block content %}
+
+<div class="created_order_congratuation">
+   <p class="congrad">Tạo đơn hàng thành công</p>
+   <p class="congrad_2">Đơn hàng của bạn đang chờ được xác nhận</p>
+   <a href="/homepage" class="continues_shoping">
+      <p class="continues_text">Tiếp tục mua hàng</p>
+   </a>
+   
+   <p class="transaction_warning">Vui lòng thanh toán số tiền: <p class="trans_text">{{total}} vnđ</p></p>
+   
+   <div class="bank_infor_wrapper">
+
+      <div style="justify-content: space-between" class="cart_cre_row">
+         <p class="cre_title">Ngân hàng:&nbsp&nbsp</p>
+         <p class="cre_content">{{bank.name}}</p>
+      </div>
+      <div style="justify-content: space-between" class="cart_cre_row">
+         <p class="cre_title">Số tài khoản:&nbsp&nbsp</p>
+         <p class="cre_content">{{bank.number}}</p>
+      </div>
+      <div style="justify-content: space-between" class="cart_cre_row">
+         <p class="cre_title">Chủ tài khoản:&nbsp&nbsp</p>
+         <p class="cre_content">{{bank.account}}</p>
+      </div>
+   </div>
+   
+</div>
+
+{% endblock content %}

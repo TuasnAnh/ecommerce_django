@@ -23,7 +23,7 @@
 
 .submitButton {
    padding: 7px 10px 7px 10px;
-   background-color: #0066ff;
+   background-color: #33cc33;
    font-size: 15px;
    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
    border: none;
@@ -46,7 +46,7 @@
 }
 .addButton {
    padding: 7px 10px 7px 10px;
-   background-color: #00cc00;
+   background-color: #0066ff;
    border: none;
    border-radius: 5px;
    cursor: pointer;
@@ -74,7 +74,7 @@ table {
 }
 
 th {
-   background-color: #0066ff;
+   background-color: #33cc33;
    color: white;
    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
    font-size: 15px;

@@ -22,14 +22,140 @@
 .row {
    display: flex;
    flex-direction: row;
-   justify-content: flex-start;
    align-items: center;
+   width: 100%;
+   justify-content: center;
+   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+   margin-top: 5px;
 }
 
 .margin {
-   margin-left: 15px;
 }
 
 .input {
    width: 200px;
+}
+
+.item {
+   margin: 0px 30px;
+}
+
+p,
+a,
+label,
+input {
+   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+   text-decoration: none;
+   color: black;
+}
+
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+   display: none;
+}
+
+body {
+   background-image: linear-gradient(to right, #d65359, #f7941e);
+}
+
+.body_wrapper {
+   width: 100vw;
+   height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.login_wrapper {
+   position: relative;
+   width: 30%;
+   padding: 30px 30px;
+   background-color: #f0f0f0;
+   border-radius: 10px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: flex-start;
+   box-shadow: 0px 0px 40px rgba(1, 1, 1, 0.3);
+}
+
+.headerText1 {
+   font-size: 50px;
+   font-weight: 500;
+   color: #d65359;
+}
+
+.formWrapper {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   padding: 0px 20px;
+}
+
+.login_label {
+   font-size: 18px;
+   font-weight: 500;
+   margin-top: 10px;
+}
+
+.login_input {
+   padding: 5px 8px;
+   border: none;
+   border: 1px solid #d65359;
+   outline: none;
+   border-radius: 5px;
+   font-size: 15px;
+   margin-top: 10px;
+}
+
+.loginButton {
+   padding: 7px 10px 7px 10px;
+   background-color: #d65359;
+   font-size: 15px;
+   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+   border: none;
+   border-radius: 5px;
+   color: white;
+   cursor: pointer;
+   margin-top: 30px;
+}
+
+.loginButton:hover {
+   background-color: #cc3300;
+}
+
+.bottomRow {
+   width: 100%;
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+   padding: 0px 20px;
+   margin-top: 5px;
+}
+
+.ask {
+   margin-right: 10px;
+}
+
+.register_text {
+   color: #cc3300;
+}
+
+.bottomText {
+   position: absolute;
+   bottom: 10px;
+   align-self: center;
+}
+
+.errorText {
+   color: red;
 }

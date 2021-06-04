@@ -1,0 +1,80 @@
+{% extends 'customer/customer-navbar.html' %} {% block content %}
+
+<div class="contentWrapper2">
+   <div class="cart_left_view">
+      <div style="width: 80%">
+         <p class="titleText">Giỏ hàng</p>
+         <table style="width: 100%" class="table">
+            <tr>
+               <th>ID</th>
+               <th>Tên</th>
+               <th>Giá sale</th>
+               <th>Số lượng</th>
+               <th>Tùy chọn</th>
+            </tr>
+            {% for item in cartItem %}
+            <tr>
+               <td>{{item.product_id.id}}</td>
+               <td>
+                  {% if item.product_id.type == 1 %}
+                  <p>{{item.product_id.inventory_id.book_id.name}}</p>
+                  {% elif item.product_id.type == 2 %}
+                  <p>{{item.product_id.inventory_id.electro_id.name}}</p>
+                  {% elif item.product_id.type == 3 %}
+                  <p>{{item.product_id.inventory_id.clothes_id.name}} {% endif %}</p>
+               </td>
+               <td>{{item.product_id.salePrice}} VNĐ</td>
+               <td>{{item.quantity}}</td>
+               <td>
+                  <a href="cart/remove?id={{item.id}}" class="editButton">
+                     <p class="editText">Xóa khỏi giỏ hàng</p>
+                  </a>
+                  {% comment %} <a href="/cart/add?id={{item.id}}" class="editButton"> </a> {% endcomment %}
+               </td>
+            </tr>
+            {% endfor %}
+         </table>
+      </div>
+   </div>
+
+   <div class="cart_right_view">
+      <div class="cart_cre_row">
+         <div class="cart_cre_left">
+            <p class="cre_title">Tên khách hàng:&nbsp&nbsp</p>
+         </div>
+         <p class="cre_content">{{person.name}}</p>
+      </div>
+      <div class="cart_cre_row">
+         <div class="cart_cre_left">
+            <p class="cre_title">Số điện thoại:&nbsp&nbsp</p>
+         </div>
+         <p class="cre_content">{{person.phone}}</p>
+      </div>
+      <div class="cart_cre_row">
+         <div class="cart_cre_left">
+            <p class="cre_title">Địa chỉ:&nbsp&nbsp</p>
+         </div>
+         <p class="cre_content">{{person.address}}</p>
+      </div>
+
+      <form action="/order/create" method="post">
+         {% csrf_token %}
+         <div class="cart_cre_row">
+            <div class="cart_cre_left">
+               <p class="cre_title">Phương thức thanh toán:&nbsp&nbsp</p>
+            </div>
+            <select name="method" class="trans_method">
+               <option value="1" selected>Thanh toán khi nhận hàng</option>
+               <option value="2">Chuyển khoản</option>
+            </select>
+         </div>
+
+         <div class="cart_button_wrapper">
+            <p class="cart_total">Tổng tiền: {{total}} VNĐ</p>
+            <button type="submit" class="cart_create_order">Đặt hàng</button>
+         </div>
+      </form>
+   </div>
+</div>
+
+{% endblock content %}

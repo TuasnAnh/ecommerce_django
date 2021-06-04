@@ -1,10 +1,140 @@
-{% extends 'customer/customer-homepage.html' %}
+{% extends 'customer/customer-navbar.html' %} {% block content %}
 
-<h1>This is home page</h1>
+<div class="contentWrapper">
+   {% for mes in messages %}
+   <p style="position: absolute; color: red; font-size: 20px">Lỗi: {{mes}}!</p>
+   {% endfor %}
 
-{% block content %}
+   <p class="titleText">Sách</p>
+   <table class="table">
+      <tr>
+         <th>ID</th>
+         <th>Tên</th>
+         <th>Giá</th>
+         <th>Giá sale</th>
+         <th>Số lượng</th>
+         <th>Nhà cung cấp</th>
+         <th>Tác giả</th>
+         <th>Thể loại</th>
+         <th>Sale</th>
+         <th>Mô tả</th>
+         <th>Tùy chọn</th>
+      </tr>
+      {% for item in product %} {% if item.type == 1 %}
+      <tr>
+         <td>{{item.id}}</td>
+         <td>{{item.inventory_id.book_id.name}}</td>
+         <td>{{item.price}} VNĐ</td>
+         <td>{{item.salePrice}} VNĐ</td>
+         <td>{{item.quantity}}</td>
+         <td>{{item.inventory_id.book_id.supplier_id.name}}</td>
+         <td>{{item.inventory_id.book_id.author}}</td>
+         <td>{{item.inventory_id.book_id.category_id.name}}</td>
+         <td>{{item.sale}}%</td>
+         <td>{{item.description}}</td>
+         <td>
+            <form action="cart/add/{{item.id}}" method="post">
+               {% csrf_token %}
+               <input class="quantity_input" placeholder="Số lượng" type="number" name="quantity" />
+               <button type="submit" class="editButton">
+                  <p class="editText">Thêm vào giỏ hàng</p>
+               </button>
+               {% comment %} <a href="/cart/add?id={{item.id}}" class="editButton"> </a> {% endcomment %}
+            </form>
+         </td>
+      </tr>
+      {% endif %} {% endfor %}
+   </table>
 
-<h1>
-   <a href="logout">log out</a>
-</h1>
+   <p class="titleText">Đồ điện tử</p>
+   <table class="table">
+      <tr>
+         <th>ID</th>
+         <th>Tên</th>
+         <th>Giá</th>
+         <th>Giá sale</th>
+         <th>Số lượng</th>
+         <th>Nhà cung cấp</th>
+         <th>Chiều rộng</th>
+         <th>chiều cao</th>
+         <th>Cân nặng</th>
+         <th>Nhãn hiệu</th>
+         <th>Sale</th>
+         <th>Mô tả</th>
+         <th>Tùy chọn</th>
+      </tr>
+      {% for item in product %} {% if item.type == 2 %}
+      <tr>
+         <td>{{item.id}}</td>
+         <td>{{item.inventory_id.electro_id.name}}</td>
+         <td>{{item.price}} VNĐ</td>
+         <td>{{item.salePrice}} VNĐ</td>
+         <td>{{item.quantity}}</td>
+         <td>{{item.inventory_id.electro_id.supplier_id.name}}</td>
+         <td>{{item.inventory_id.electro_id.width}}</td>
+         <td>{{item.inventory_id.electro_id.height}}</td>
+         <td>{{item.inventory_id.electro_id.weight}}</td>
+         <td>{{item.inventory_id.electro_id.branch}}</td>
+         <td>{{item.sale}}%</td>
+         <td>{{item.description}}</td>
+         <td>
+            <form action="cart/add/{{item.id}}" method="post">
+               {% csrf_token %}
+               <input class="quantity_input" placeholder="Số lượng" type="number" name="quantity" />
+               <button type="submit" class="editButton">
+                  <p class="editText">Thêm vào giỏ hàng</p>
+               </button>
+               {% comment %} <a href="/cart/add?id={{item.id}}" class="editButton"> </a> {% endcomment %}
+            </form>
+         </td>
+      </tr>
+      {% endif %} {% endfor %}
+   </table>
+
+   <p class="titleText">Quần áo</p>
+   <table class="table">
+      <tr>
+         <th>ID</th>
+         <th>Tên</th>
+         <th>Giá</th>
+         <th>Giá sale</th>
+         <th>Số lượng</th>
+         <th>Nhà cung cấp</th>
+         <th>Kích cỡ</th>
+         <th>Loại</th>
+         <th>Nhãn hiệu</th>
+         <th>Màu sắc</th>
+         <th>Sale</th>
+         <th>Mô tả</th>
+         <th>Tùy chọn</th>
+      </tr>
+      {% for item in product %} {% if item.type == 3 %}
+      <tr>
+         <td>{{item.id}}</td>
+         <td>{{item.inventory_id.clothes_id.name}}</td>
+         <td>{{item.price}} VNĐ</td>
+         <td>{{item.salePrice}} VNĐ</td>
+         <td>{{item.quantity}}</td>
+         <td>{{item.inventory_id.clothes_id.supplier_id.name}}</td>
+         <td>{{item.inventory_id.clothes_id.size}}</td>
+         <td>{{item.inventory_id.clothes_id.fashioncategory_id.name}}</td>
+         <td>{{item.inventory_id.clothes_id.branch}}</td>
+         <td>{{item.inventory_id.clothes_id.color}}</td>
+         <td>{{item.sale}}%</td>
+         <td>{{item.description}}</td>
+         <td>
+            <form action="cart/add/{{item.id}}" method="post">
+               {% csrf_token %}
+               <input class="quantity_input" placeholder="Số lượng" type="number" name="quantity" />
+               <button type="submit" class="editButton">
+                  <p class="editText">Thêm vào giỏ hàng</p>
+               </button>
+               {% comment %} <a href="/cart/add?id={{item.id}}" class="editButton"> </a> {% endcomment %}
+            </form>
+         </td>
+      </tr>
+      {% endif %} {% endfor %}
+   </table>
+</div>
+
 {% endblock content %}

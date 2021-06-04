@@ -1,0 +1,102 @@
+{% extends 'business/business-navbar.html' %} {% block content %}
+
+<div class="book_add_wrapper">
+   <div class="book_add_container">
+      <p class="book_add_title">Sửa thông tin</p>
+
+      <form style="width: 100%" method="post" action="/product/edit/{{product.id}}">
+         {% csrf_token %}
+
+         <div class="book_add_item_wrapper">
+            <div class="book_add_item">
+               <label class="book_add_item_text" for="name">Tên</label>
+               <input
+                  style="border-color: green"
+                  readonly
+                  class="book_add_item_text_input"
+                  type="text"
+                  name="name"
+                  value="{{product.inventory_id.book_id.name}}"
+               />
+            </div>
+            <div class="book_add_item">
+               <label class="book_add_item_text" for="quantity">Số lượng</label>
+               <input class="book_add_item_text_input" type="number" name="quantity" value="{{product.quantity}}" />
+            </div>
+            <div class="book_add_item">
+               <label class="book_add_item_text" for="price">Giá cả</label>
+               <input class="book_add_item_text_input" type="number" name="price" value="{{product.price}}" />
+            </div>
+            <div class="book_add_item">
+               <label class="book_add_item_text" for="author">Tác giả</label>
+               <input
+                  style="border-color: green"
+                  readonly
+                  class="book_add_item_text_input"
+                  type="text"
+                  name="author"
+                  value="{{product.inventory_id.book_id.author}}"
+               />
+            </div>
+            <div class="book_add_item">
+               <label class="book_add_item_text" for="publisher">Nhà xuất bản</label>
+               <input
+                  style="border-color: green"
+                  readonly
+                  class="book_add_item_text_input"
+                  type="text"
+                  name="publisher"
+                  value="{{product.inventory_id.book_id.publisher}}"
+               />
+            </div>
+            <div class="book_add_item">
+               <label class="book_add_item_text" for="category">Thể loại</label>
+               <input
+                  style="border-color: green"
+                  readonly
+                  class="book_add_item_text_input"
+                  type="text"
+                  name="category"
+                  value="{{product.inventory_id.book_id.category_id.name}}"
+               />
+            </div>
+            <div class="book_add_item">
+               <label class="book_add_item_text" for="supplier">Nhà cung cấp</label>
+               <input
+                  style="border-color: green"
+                  readonly
+                  class="book_add_item_text_input"
+                  type="text"
+                  name="supplier"
+                  value="{{product.inventory_id.book_id.supplier_id.name}}"
+               />
+            </div>
+
+            <div class="book_add_item">
+               <label class="book_add_item_text" for="sale">Sale</label>
+               <input
+                  class="book_add_item_text_input"
+                  type="text"
+                  name="sale"
+                  placeholder="%"
+                  value="{{product.sale}}"
+               />
+            </div>
+
+            <div class="book_add_item">
+               <label class="book_add_item_text" for="description">Mô tả</label>
+               <input value="{{product.description}}" class="book_add_item_text_input" type="text" name="description" />
+            </div>
+         </div>
+
+         <div class="book_add_button_row">
+            <button type="submit" class="book_add_button">Xác nhận</button>
+         </div>
+         {% for mes in messages %}
+         <h4>{{mes}}</h4>
+         {% endfor %}
+      </form>
+   </div>
+</div>
+
+{% endblock content %}

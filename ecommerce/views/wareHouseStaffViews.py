@@ -221,8 +221,6 @@ def inventoryAddElectro(request):
         branch = request.POST.get("branch")
         supplier_id = request.POST.get("supplier")
 
-        print(name, quantity, price, width, height, weight, branch, supplier_id)
-
         if (
             len(name) <= 0
             or len(quantity) <= 0

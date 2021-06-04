@@ -1,0 +1,112 @@
+{% extends 'business/business-navbar.html' %} {% block content %}
+
+<div class="book_add_wrapper">
+   <div class="book_add_container">
+      <p class="book_add_title">Thêm đồ may mặc</p>
+
+      <form style="width: 100%" method="post" action="/product/clothes/add/{{inventory.id}}">
+         {% csrf_token %}
+
+         <div class="book_add_item_wrapper">
+            <div class="book_add_item">
+               <label class="book_add_item_text" for="name">Tên</label>
+               <input
+                  style="border-color: green"
+                  readonly
+                  class="book_add_item_text_input"
+                  type="text"
+                  name="name"
+                  value="{{inventory.clothes_id.name}}"
+               />
+            </div>
+            <div class="book_add_item">
+               <label class="book_add_item_text" for="quantity">Số lượng</label>
+               <input class="book_add_item_text_input" type="number" name="quantity" value="{{inventory.quantity}}" />
+            </div>
+            <div class="book_add_item">
+               <label class="book_add_item_text" for="price">Giá cả</label>
+               <input
+                  placeholder="VND"
+                  class="book_add_item_text_input"
+                  type="number"
+                  name="price"
+                  value="{{inventory.price}}"
+               />
+            </div>
+            <div class="book_add_item">
+               <label class="book_add_item_text" for="size">Kích thước</label>
+               <input
+                  style="border-color: green"
+                  readonly
+                  class="book_add_item_text_input"
+                  type="text"
+                  name="size"
+                  value="{{inventory.clothes_id.size}}"
+               />
+            </div>
+            <div class="book_add_item">
+               <label class="book_add_item_text" for="branch">Nhãn hiệu</label>
+               <input
+                  style="border-color: green"
+                  readonly
+                  class="book_add_item_text_input"
+                  type="text"
+                  name="branch"
+                  value="{{inventory.clothes_id.branch}}"
+               />
+            </div>
+            <div class="book_add_item">
+               <label class="book_add_item_text" for="color">Màu sắc</label>
+               <input
+                  style="border-color: green"
+                  readonly
+                  class="book_add_item_text_input"
+                  type="text"
+                  name="color"
+                  value="{{inventory.clothes_id.color}}"
+               />
+            </div>
+            <div class="book_add_item">
+               <label class="book_add_item_text" for="fashionCategory">Loại</label>
+               <input
+                  style="border-color: green"
+                  readonly
+                  class="book_add_item_text_input"
+                  type="text"
+                  name="fashionCategory"
+                  value="{{inventory.clothes_id.fashioncategory_id.name}}"
+               />
+            </div>
+            <div class="book_add_item">
+               <label class="book_add_item_text" for="supplier">Nhà cung cấp</label>
+               <input
+                  style="border-color: green"
+                  readonly
+                  class="book_add_item_text_input"
+                  type="text"
+                  name="supplier"
+                  value="{{inventory.clothes_id.supplier_id.name}}"
+               />
+            </div>
+            <div class="book_add_item">
+               <label class="book_add_item_text" for="sale">Sale</label>
+               <input class="book_add_item_text_input" type="text" name="sale" placeholder="%" />
+            </div>
+
+            <div class="book_add_item">
+               <label class="book_add_item_text" for="description">Mô tả</label>
+               <input class="book_add_item_text_input" type="text" name="description" />
+            </div>
+         </div>
+
+         <div class="book_add_button_row">
+            <button type="submit" class="book_add_button">Thêm mới</button>
+         </div>
+         {% for mes in messages %}
+         <h4>{{mes}}</h4>
+         {% endfor %}
+      </form>
+   </div>
+</div>
+
+{% endblock content %}

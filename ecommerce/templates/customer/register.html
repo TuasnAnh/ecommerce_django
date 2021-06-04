@@ -9,63 +9,52 @@
       <title>Register</title>
    </head>
    <body>
-      <form action="register" method="post">
-         {% csrf_token %}
-         <div class="wrapper">
-            <div class="container">
-               <label for="name">Username</label>
-               <input class="input" type="text" name="username" />
-            </div>
+      <div class="body_wrapper">
+         <div class="login_wrapper">
+            <p class="headerText1">REGISTER</p>
 
-            <div class="container">
-               <label for="password">Password</label>
-               <input class="input" type="password" name="password" />
-            </div>
+            <form style="width: 100%" action="register" method="post">
+               {% csrf_token %}
+               <div class="formWrapper">
+                  <label class="login_label" for="name">Username</label>
+                  <input class="login_input" type="text" name="username" />
 
-            <div class="container">
-               <label for="repassword">Re-Password</label>
-               <input class="input" type="password" name="repassword" />
-            </div>
+                  <label class="login_label" for="password">Password</label>
+                  <input class="login_input" type="password" name="password" />
 
-            <div class="container">
-               <label for="name">Name</label>
-               <input class="input" type="text" name="name" />
-            </div>
+                  <label class="login_label" for="repassword">Re-Password</label>
+                  <input class="login_input" type="password" name="repassword" />
 
-            <div class="container">
-               <label for="gender">Gender</label>
-               <div class="row">
-                  <input class="margin" type="radio" name="gender" value="1" /> Male<br />
-                  <input class="margin" type="radio" name="gender" value="2" /> Female<br />
-                  <input class="margin" type="radio" name="gender" value="3" /> Other
+                  <label class="login_label" for="name">Name</label>
+                  <input class="login_input" type="text" name="name" />
+
+                  <label class="login_label" for="gender">Gender</label>
+                  <div class="row">
+                     <div class="item"><input class="margin" type="radio" name="gender" value="1" />&nbsp Male</div>
+                     <div class="item"><input class="margin" type="radio" name="gender" value="2" />&nbsp Female</div>
+                     <div class="item"><input class="margin" type="radio" name="gender" value="3" />&nbsp Other</div>
+                  </div>
+
+                  <label class="login_label" for="Phone">Phone</label>
+                  <input class="login_input" type="text" name="Phone" />
+
+                  <label class="login_label" for="Email">Email</label>
+                  <input class="login_input" type="text" name="Email" />
+
+                  <label class="login_label" for="birth">Date of birth</label>
+                  <input class="login_input" type="date" name="birth" />
+
+                  <label class="login_label" for="address">Address</label>
+                  <input class="login_input" type="text" name="address" />
+                  <button type="submit" class="loginButton">Đăng ký</button>
                </div>
+            </form>
+            <div class="bottomText">
+               {% for mes in messages %}
+               <p class="errorText">{{mes}}!!</p>
+               {% endfor %}
             </div>
-
-            <div class="container">
-               <label for="Phone">Phone</label>
-               <input class="input" type="text" name="Phone" />
-            </div>
-
-            <div class="container">
-               <label for="Email">Email</label>
-               <input class="input" type="text" name="Email" />
-            </div>
-
-            <div class="container">
-               <label for="birth">Date of birth</label>
-               <input class="input" type="date" name="birth" />
-            </div>
-
-            <div class="container">
-               <label for="address">Address</label>
-               <input class="input" type="text" name="address" />
-            </div>
-            <input type="submit" />
          </div>
-      </form>
-
-      {% for item in messages%}
-      <h1>Error {{item}}</h1>
-      {% endfor %}
+      </div>
    </body>
 </html>

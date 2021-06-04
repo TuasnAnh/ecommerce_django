@@ -2,7 +2,7 @@
 
 <div class="contentWrapper">
    <div class="headerWrapper">
-      <p class="headerText">Danh sách đơn hàng đang chờ</p>
+      <p class="headerText">Danh sách đơn hàng đã vận chuyển</p>
    </div>
 
    {% for ort in order %}
@@ -18,10 +18,6 @@
       <div class="order_cre_row">
          <p class="order_cre_left">Số điện thoại:&nbsp&nbsp</p>
          <p class="order_cre_right">{{ort.person_id.phone}}</p>
-      </div>
-      <div class="order_cre_row">
-         <p class="order_cre_left">Thời gian:&nbsp&nbsp</p>
-         <p class="order_cre_right">{{ort.created_time}}</p>
       </div>
       <div class="order_cre_row">
          <p class="order_cre_left">Phương thức thanh toán:&nbsp&nbsp</p>
@@ -59,15 +55,6 @@
          </tr>
          {% endfor %}
       </table>
-
-      <div class="bottomRow">
-         <a href="/order/reject?id={{ort.id}}" class="reject_order_wrapper">
-            <p class="confirmText">Từ chối</p>
-         </a>
-         <a href="/order/confirm?id={{ort.id}}" class="confirm_order_wrapper">
-            <p class="confirmText">Tiếp nhận</p>
-         </a>
-      </div>
    </div>
 
    {% endfor %}

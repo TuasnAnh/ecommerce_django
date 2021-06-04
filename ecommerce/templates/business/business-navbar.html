@@ -6,10 +6,46 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       {% load static %}
       <link rel="stylesheet" type="text/css" href="{% static 'ecommerce/business/business-navbar.css' %}" />
+      <link rel="stylesheet" type="text/css" href="{% static 'ecommerce/business/business-homepage.css' %}" />
+      <link rel="stylesheet" type="text/css" href="{% static 'ecommerce/business/book-add-form.css' %}" />
+      <link rel="stylesheet" type="text/css" href="{% static 'ecommerce/business/clothes-add-form.css' %}" />
+      <link rel="stylesheet" type="text/css" href="{% static 'ecommerce/business/electro-add-form.css' %}" />
+
       <title>Business</title>
    </head>
    <body>
-      <h1>This is business nav bar</h1>
+      <div class="wrapper">
+         <div class="flex">
+            <h1 class="title">Nhân viên kinh doanh</h1>
+         </div>
+
+         <div class="container">
+            <a href="/business-homepage" class="item_wrapper">
+               <p class="text">Kho</p>
+            </a>
+            <a href="/product/add" class="item_wrapper">
+               <p class="text">Thêm hàng</p>
+            </a>
+            {% comment %}
+            <a href="/category" class="item_wrapper">
+               <p class="text">Category</p>
+            </a>
+            <a href="/supplier" class="item_wrapper">
+               <p class="text">Nhà cung cấp</p>
+            </a>
+            <a href="/statistical" class="item_wrapper">
+               <p class="text">Thống kê</p>
+            </a>
+            {% endcomment %}
+         </div>
+
+         <div class="flex">
+            <a href="/staff/logout" class="item_wrapper_2">
+               <p class="text">Đăng xuất</p>
+            </a>
+         </div>
+      </div>
+
       {% block content %} {% comment %} Child in here {% endcomment %} {% endblock %}
    </body>
 </html>
