@@ -30,7 +30,7 @@ def business_homepage(request):
         for item in product:
             price = item.price
             sale = item.sale
-            salePrice = price * sale / 100
+            salePrice = price * (100 - sale) / 100
             item.salePrice = round(salePrice)
 
         res = {"product": product}

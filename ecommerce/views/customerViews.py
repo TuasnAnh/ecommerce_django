@@ -18,7 +18,7 @@ def homepage(request):
         for item in product:
             price = item.price
             sale = item.sale
-            salePrice = price * sale / 100
+            salePrice = price * (100 - sale) / 100
             item.salePrice = round(salePrice)
 
         res = {"product": product}
@@ -131,7 +131,7 @@ def getCart(request):
             product = item.product_id
             price = product.price
             sale = product.sale
-            salePrice = price * sale / 100
+            salePrice = price * (100 - sale) / 100
             total += salePrice * item.quantity
             item.product_id.salePrice = round(salePrice)
 
@@ -167,7 +167,7 @@ def createOrder(request):
             product = item.product_id
             price = product.price
             sale = product.sale
-            salePrice = price * sale / 100
+            salePrice = price * (100 - sale) / 100
             total += salePrice * item.quantity
 
         created_time = datetime.now()

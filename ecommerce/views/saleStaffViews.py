@@ -20,7 +20,7 @@ def sale_homepage(request):
                 product = item2.product_id
                 price = product.price
                 sale = product.sale
-                salePrice = price * sale / 100
+                salePrice = price * (100 - sale) / 100
                 item2.product_id.salePrice = round(salePrice)
             item.cartItem = cartItem
 
@@ -41,7 +41,7 @@ def delivering(request):
                 product = item2.product_id
                 price = product.price
                 sale = product.sale
-                salePrice = price * sale / 100
+                salePrice = price * (100 - sale) / 100
                 item2.product_id.salePrice = round(salePrice)
             item.cartItem = cartItem
 
@@ -62,7 +62,7 @@ def success(request):
                 product = item2.product_id
                 price = product.price
                 sale = product.sale
-                salePrice = price * sale / 100
+                salePrice = price * (100 - sale) / 100
                 item2.product_id.salePrice = round(salePrice)
             item.cartItem = cartItem
 
