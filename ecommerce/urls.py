@@ -10,6 +10,7 @@ urlpatterns = [
     # customer urls
     path("homepage", customerViews.homepage, name="homepage"),
     path("register", customerViews.register, name="register"),
+    path("customer/search", customerViews.search, name="customer/search"),
     path("cart", customerViews.getCart, name="cart"),
     path("cart/remove", customerViews.removeFromCart, name="cart/remove"),
     path("cart/add/<int:id>", customerViews.addToCart, name="cart/add"),

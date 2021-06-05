@@ -16,21 +16,14 @@ def login(request):
             account = User.objects.filter(username=username).filter(pass_field=password).exists()
             if account:
                 authenUser = User.objects.get(username=username)
-                authenPerson = Person.objects.get(user_id=authenUser)
-                request.session["personId"] = authenPerson.id
-                authen.login(username, authenUser.role, authenUser.id, authenPerson.id)
                 if authenUser.role == "Customer":
+                    authenPerson = Person.objects.get(user_id=authenUser)
+                    request.session["personId"] = authenPerson.id
+                    authen.login(username, authenUser.role, authenUser.id, authenPerson.id)
                     return redirect("homepage")
                 else:
                     messages.info(request, "Không phải tài khoản khách hàng")
                     return redirect("login")
-                # elif authenUser.role == "warehouse_staff":
-                #     return redirect("warehouse-homepage")
-                # elif authenUser.role == "sale_staff":
-                #     return redirect("sale-homepage")
-                # elif authenUser.role == "business_staff":
-                #     return redirect("business-homepage")
-
             else:
                 messages.info(request, "wrong password")
                 return redirect("login")
@@ -42,12 +35,6 @@ def login(request):
         if check != False:
             if check == "Customer":
                 return redirect("homepage")
-            # elif check == "warehouse_staff":
-            #     return redirect("warehouse-homepage")
-            # elif check == "sale_staff":
-            #     return redirect("sale-homepage")
-            # elif check == "business_staff":
-            #     return redirect("business-homepage")
         return render(request, "login.html")
 
 

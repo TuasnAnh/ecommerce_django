@@ -18,6 +18,7 @@
             <a href="/homepage" class="navbar_title">BOEC</a>
 
             <form action="/customer/search" method="post">
+               {% csrf_token %}
                <div class="navbar_input_wrapper">
                   <input
                      onkeypress="onKeyPress()"

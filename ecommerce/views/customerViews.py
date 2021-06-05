@@ -4,7 +4,7 @@ from django.http.response import HttpResponseNotAllowed, HttpResponseRedirect
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from django.contrib import messages
-from ..models import Bank, Cart, Cartitem, Inventory, Order, Person, Product, User
+from ..models import Bank, Book, Cart, Cartitem, Clothes, Electro, Inventory, Order, Person, Product, User
 from ..currentAuthen import authen
 
 
@@ -81,6 +81,35 @@ def register(request):
         cart.save()
 
         return redirect("login")
+
+
+def search(request):
+    if request.method == "POST":
+        search = request.POST.get("search")
+        print(search)
+
+        inventory = []
+        book = Book.objects.filter(name__icontains=search)
+        electro = Electro.objects.filter(name__icontains=search)
+        clothes = Clothes.objects.filter(name__icontains=search)
+
+        for item in book:
+            inventory.append(Inventory.objects.get(book_id=item))
+
+        for item in electro:
+            inventory.append(Inventory.objects.get(electro_id=item))
+
+        for item in clothes:
+            inventory.append(Inventory.objects.get(clothes_id=item))
+
+        product = []
+        for item in inventory:
+            p = Product.objects.filter(inventory_id=item)
+            print(len(p))
+            if len(p) > 0:
+                product.append(p[0])
+        res = {"product": product}
+        return render(request, "customer/homepage.html", res)
 
 
 def addToCart(request, id):
